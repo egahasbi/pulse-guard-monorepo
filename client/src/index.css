@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0b0f17;
+    --bg-secondary: #111827;
+    --bg-card: #161f30;
+    --border-color: #1f293d;
+    --text-primary: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --accent-amber: #f59e0b;
+    --accent-indigo: #6366f1;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0b0f17;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f293d;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+}
+
+@layer components {
+  .card-surface {
+    background-color: #131b2c;
+    border: 1px solid #1e293b;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-surface-hover {
+    transition-property: border-color, transform, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-surface-hover:hover {
+    border-color: #334155;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  }
+
+  .badge-up {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-down {
+    background-color: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-paused {
+    background-color: rgba(156, 163, 175, 0.15);
+    color: #d1d5db;
+    border: 1px solid rgba(156, 163, 175, 0.3);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-degraded {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .pulse-indicator {
+    position: relative;
+    display: inline-flex;
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  .pulse-indicator-ping {
+    position: absolute;
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 9999px;
+    opacity: 0.75;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .pulse-indicator-dot {
+    position: relative;
+    display: inline-flex;
+    border-radius: 9999px;
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .latency-bar-up {
+    background-color: #10b981;
+  }
+
+  .latency-bar-degraded {
+    background-color: #f59e0b;
+  }
+
+  .latency-bar-down {
+    background-color: #f43f5e;
+  }
+
+  .latency-bar-empty {
+    background-color: #1f293d;
+  }
+
+  .code-block {
+    background-color: #0b0f17;
+    border: 1px solid #1e293b;
+    border-radius: 0.375rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.3);
+  }
+
+  .glow-rose {
+    box-shadow: 0 0 15px -3px rgba(244, 63, 94, 0.3);
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 15px -3px rgba(99, 102, 241, 0.3);
+  }
+}
